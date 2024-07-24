@@ -1,12 +1,22 @@
-package br.com.api.TesteInfo4.dtos;
+package br.com.api.SistemaInfo4.entities;
 
-public class ItemsRespostaDTO {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "skill")
+public class Skill {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // informa q é pk
 	private Integer id;
 	private String nome;
 	private String descricao;
-	
-	public ItemsRespostaDTO() {
+
+	public Skill() {
 		super();
 	}
 
@@ -34,5 +44,4 @@ public class ItemsRespostaDTO {
 		this.descricao = descricao;
 	}
 
-	
 }
