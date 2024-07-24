@@ -1,0 +1,87 @@
+.paginaCa {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color: #BBC1DC;
+    width: 50vw;
+    height: 70vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px
+}
+
+.form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 20px;
+    gap: 20%;
+}
+
+.dados{
+    background-color: #c071b9;
+    width: 80%;
+    height: 70%;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 20px;
+    gap: 20%;
+}
+
+.nome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
+.nomei{
+    width: 100%;
+    border-radius: 10px;
+    border: solid 1px #000;
+    box-shadow: 2px 2px 10px #00000087;
+}
+
+.descricao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 50%;
+}
+
+.descricaoi{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border-radius: 10px;
+    border: solid 1px #000;
+    box-shadow: 2px 2px 10px #00000087;
+
+}
+
+.btn{
+    background-color: #00A0A3;
+    width: 30%;
+    height: 10%;
+    font-weight: bold;
+}
+.btn:hover{
+    background-color: #01696a;
+}
