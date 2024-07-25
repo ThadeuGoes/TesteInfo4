@@ -1,4 +1,6 @@
-package br.com.api.SistemaInfo4.entities;
+package br.com.api.Info4.entities;
+
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "skill")
-public class Skill {
+@Table(name = "items")
+public class Items {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // informa q é pk
@@ -17,8 +19,9 @@ public class Skill {
 	private String nome;
 	@Column(columnDefinition = "TEXT")
 	private String descricao;
+	private LocalDateTime data;
 
-	public Skill() {
+	public Items() {
 		super();
 	}
 
@@ -44,6 +47,14 @@ public class Skill {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public LocalDateTime getData() {
+		return data;
+	}
+
+	public void setData(LocalDateTime data) {
+		this.data = data;
 	}
 
 }

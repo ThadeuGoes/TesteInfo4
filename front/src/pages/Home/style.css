@@ -17,9 +17,15 @@
     align-items: center;
     background-color: #BBC1DC;
     gap: 20px;
-    padding: 20px;
+    padding-top: 20px;
     margin-bottom: 20px;
     border-radius: 20px;
+}
+
+@media screen and (max-width : 768px){
+    .postHo{
+        width: 80%;
+    }
 }
 
 .nomeHo {
@@ -28,14 +34,15 @@
     border-radius: 10px;
     padding: 5px;
     font-weight: bold;
+    width: 60%;
 }
 
 .descricaoHo {
     text-align: center;
     background-color: #ede4e2;
     border-radius: 20px;
+    padding: 10px;
     width: 70%;
-    overflow-y: scroll
 }
 
 .btnSobe {
@@ -44,4 +51,20 @@
     right: 10%;
     bottom: 5%;
     border: 0px;
+}
+
+.algo {
+    width: 100%;
+    white-space: pre-wrap;
+    overflow-x: hidden;
+    /* text-overflow: ellipsis; */
+}
+
+.data{
+    width: 100%;
+    margin: 0px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }

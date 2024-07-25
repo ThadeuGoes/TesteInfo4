@@ -37,7 +37,7 @@ function Cadastro() {
 
   const criaItem = async (data) => {
     setDisab(true)
-    await service.post("/item/salvar", data)
+    await service.post("/items/salvar", data)
       .then(() => {
         console.log("deu certo");
         handleShow1();
@@ -53,7 +53,7 @@ function Cadastro() {
       <HeaderWeb />
       <div className="paginaCa">
 
-        <p>Cadastre sua tarefa</p>
+        <p style={{fontSize:"18px"}}>Cadastre sua tarefa</p>
 
         <div className="containerCA">
           <form action="#" className='form' onSubmit={handleSubmit(criaItem)}>

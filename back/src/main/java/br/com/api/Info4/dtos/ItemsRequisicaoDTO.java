@@ -1,11 +1,11 @@
-package br.com.api.SistemaInfo4.dto;
+package br.com.api.Info4.dtos;
 
-public class SkillRequisicaoDTO {
+public class ItemsRequisicaoDTO {
 
 	private String nome;
 	private String descricao;
-
-	public SkillRequisicaoDTO() {
+	
+	public ItemsRequisicaoDTO() {
 		super();
 	}
 
@@ -24,5 +24,5 @@ public class SkillRequisicaoDTO {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
+	
 }

@@ -1,12 +1,16 @@
-package br.com.api.SistemaInfo4.dto;
+package br.com.api.Info4.dtos;
 
-public class SkillRespostaDTO {
+import java.time.LocalDateTime;
+
+public class ItemsRespostaDTO {
 
 	private Integer id;
 	private String nome;
 	private String descricao;
+	private String data;
 
-	public SkillRespostaDTO() {
+	
+	public ItemsRespostaDTO() {
 		super();
 	}
 
@@ -32,6 +36,15 @@ public class SkillRespostaDTO {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 }
