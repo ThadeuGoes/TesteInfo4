@@ -22,8 +22,12 @@ public class ApplicationStart {
 		if (skillRepository.count() == 0) {
 			SkillRequisicaoDTO novoSkill = new SkillRequisicaoDTO();
 
-			novoSkill.setNome("Java");
-			novoSkill.setDescricao("Reconhecida por versatilidade em backend ");
+			novoSkill.setNome("Item 1");
+			novoSkill.setDescricao("descrição do item 1 ");
+			skillService.salvar(novoSkill);
+			
+			novoSkill.setNome("Item 2");
+			novoSkill.setDescricao("descrição do item 2 ");
 			skillService.salvar(novoSkill);
 		}
 	}

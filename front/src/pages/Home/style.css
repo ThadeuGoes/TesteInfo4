@@ -1,54 +1,53 @@
 .paginaHo {
-    height: 100vh;
-    width: 100%;
-    padding: 50px;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    /* background-color: blue; */
-}
-
-.logout {
-    background-color: #53B58C;
-    border: 0;
-    border-radius: 10px;
-    padding: 5px;
-    display: flex;
     justify-content: center;
     align-items: center;
-    height: 5%;
-    margin: 7px;
-    position: absolute;
-    top: 10px;
-    right: 0;
+    overflow-y: scroll;
+    margin-top: 10px;
 }
 
-.tabelaHo {
-    border: 1px solid black;
-    /* border-collapse: collapse; */
+.postHo {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #BBC1DC;
+    gap: 20px;
+    padding: 20px;
+    z-index: -1;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.nomeHo {
+    text-align: center;
+    background-color: #9ca2c0;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.descricaoHo {
+    text-align: center;
+    background-color: #c9cee3;
     border-radius: 20px;
     width: 70%;
-    padding: 10px;
+    overflow-y: scroll
 }
 
-.tabelaHeadHo {
-    border-bottom: 2px solid black;
-}
-
-.linha {
-    align-items: center;
-    justify-content: center;
-}
-
-.linha td {
-    padding: 5px;
-    align-items: center;
-    justify-content: center;
-}
-.botaoSkillHo{
-    background-color: #53B58C;
-    border: 0;
-    padding: 5px;
+.btncadastrar {
+    background-color: #00A0A3;
+    width: 10%;
+    height: 5vh;
+    font-weight: bold;
+    position: fixed;
+    right: 10%;
+    bottom: 5%;
+    border: 0px;
     border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 2px 2px 10px #00000087;
+}
+.btncadastrar:hover {
+    background-color: #01696a;
 }

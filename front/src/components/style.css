@@ -1,8 +1,6 @@
 .corpo {
-    height: 70px;
+    height: 10vh;
     display: flex;
     background-color: #1A3C4E;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px;
+    padding-left: 5px;
 }
