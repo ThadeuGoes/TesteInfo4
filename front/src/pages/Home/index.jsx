@@ -4,6 +4,8 @@ import HeaderWeb from '../../components/index'
 import { Table } from 'react-bootstrap';
 import service from '../../service/service'
 import './style.css'
+import { BsFillArrowUpSquareFill } from "react-icons/bs";
+
 
 
 function Home() {
@@ -18,6 +20,13 @@ function Home() {
                 setLista(resposta.data);
             })
     }
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
 
     useEffect(() => {
         pegarItems()
@@ -42,7 +51,8 @@ function Home() {
                         </div>
                     )
                 })}
-                <button className='btncadastrar' onClick={() => navigate('/cadastro')}>Cadastrar</button>
+                {/* <button className='btncadastrar' onClick={() => navigate('/cadastro')}>Cadastrar</button> */}
+                <button className='btnSobe' onClick={scrollToTop}><BsFillArrowUpSquareFill size={30} /></button>
             </div>
         </>
     )

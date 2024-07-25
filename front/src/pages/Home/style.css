@@ -4,7 +4,9 @@
     justify-content: center;
     align-items: center;
     overflow-y: scroll;
-    margin-top: 10px;
+    padding-top: 15px;
+    background-color: #e8f1f3;
+    min-height: 90vh;
 }
 
 .postHo {
@@ -16,38 +18,30 @@
     background-color: #BBC1DC;
     gap: 20px;
     padding: 20px;
-    z-index: -1;
     margin-bottom: 20px;
     border-radius: 20px;
 }
 
 .nomeHo {
     text-align: center;
-    background-color: #9ca2c0;
-    border-radius: 20px;
+    background-color: #da9e9e;
+    border-radius: 10px;
     padding: 5px;
+    font-weight: bold;
 }
 
 .descricaoHo {
     text-align: center;
-    background-color: #c9cee3;
+    background-color: #ede4e2;
     border-radius: 20px;
     width: 70%;
     overflow-y: scroll
 }
 
-.btncadastrar {
-    background-color: #00A0A3;
-    width: 10%;
-    height: 5vh;
-    font-weight: bold;
+.btnSobe {
+    background-color: transparent;
     position: fixed;
     right: 10%;
     bottom: 5%;
     border: 0px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px #00000087;
-}
-.btncadastrar:hover {
-    background-color: #01696a;
 }

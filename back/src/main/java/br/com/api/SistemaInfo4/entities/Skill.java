@@ -1,5 +1,6 @@
 package br.com.api.SistemaInfo4.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,7 @@ public class Skill {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // informa q é pk
 	private Integer id;
 	private String nome;
+	@Column(columnDefinition = "TEXT")
 	private String descricao;
 
 	public Skill() {

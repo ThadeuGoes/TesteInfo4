@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, createContext, useContext } from 'react'
 import './style.css'
 import HeaderWeb from '../../components/index'
 import { useForm } from "react-hook-form";
@@ -6,7 +6,6 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import service from '../../service/service'
@@ -21,7 +20,6 @@ function Cadastro() {
 
   let navigate = useNavigate();
 
-
   const [show1, setShow1] = useState(false);
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
@@ -30,6 +28,7 @@ function Cadastro() {
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true)
 
+  const [disab, setDisab] = useState(false);
 
   const {
     register,
@@ -37,6 +36,7 @@ function Cadastro() {
     formState: { errors } } = useForm({ resolver: yupResolver(validationPost) });
 
   const criaItem = async (data) => {
+    setDisab(true)
     await service.post("/item/salvar", data)
       .then(() => {
         console.log("deu certo");
@@ -45,13 +45,15 @@ function Cadastro() {
       .catch(() => {
         console.log("deu errado");
         handleShow2();
+        setDisab(false)
       })
   }
-
   return (
     <>
       <HeaderWeb />
       <div className="paginaCa">
+
+        <p>Cadastre sua tarefa</p>
 
         <div className="containerCA">
           <form action="#" className='form' onSubmit={handleSubmit(criaItem)}>
@@ -72,12 +74,9 @@ function Cadastro() {
               </div>
             </div>
 
-            <button className='btnEnviar' >Enviar</button>
+            <button className='btnEnviar' disabled={disab} >Enviar</button>
 
           </form>
-        </div>
-        <div>
-          <button className='bntVoltar' onClick={() => navigate('/')}>Voltar</button>
         </div>
       </div>
 
@@ -87,9 +86,9 @@ function Cadastro() {
         </Modal.Header>
         <Modal.Body>Seu cadastro fo realizado com sucesso</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => navigate('/')}>
+          <button className='bntmodal' onClick={() => navigate('/')}>
             Fechar
-          </Button>
+          </button>
         </Modal.Footer>
       </Modal>
 
@@ -99,9 +98,9 @@ function Cadastro() {
         </Modal.Header>
         <Modal.Body>Seu cadastro não pode ser realizado</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose2}>
+          <button className='bntmodal' onClick={handleClose2} >
             Fechar
-          </Button>
+          </button>
         </Modal.Footer>
       </Modal>
     </>

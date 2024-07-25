@@ -1,6 +1,22 @@
 .corpo {
     height: 10vh;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #1A3C4E;
-    padding-left: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btncadastrar{
+    height: 50%;
+    background-color: rgb(0, 191, 224);
+    font-weight: bold;
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #00000087;
+}
+
+.btncadastrar:hover{
+    background-color: #01696a;
 }
