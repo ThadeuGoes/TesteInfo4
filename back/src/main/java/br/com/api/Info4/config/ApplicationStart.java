@@ -13,22 +13,24 @@ import br.com.api.Info4.service.ItemsService;
 public class ApplicationStart {
 
 	@Autowired
-	private ItemsRepository skillRepository;
+	private ItemsRepository itemRepository;
 	@Autowired
-	private ItemsService skillService;
+	private ItemsService itemService;
 
 	@PostConstruct
 	public void carregarDadosIniciais() {
-		if (skillRepository.count() == 0) {
-			ItemsRequisicaoDTO novoSkill = new ItemsRequisicaoDTO();
+		if (itemRepository.count() == 0) {
+			ItemsRequisicaoDTO novoItem = new ItemsRequisicaoDTO();
 
-			novoSkill.setNome("Criar um componente de formulário para cadastro de usuários.");
-			novoSkill.setDescricao("Desenvolver um componente reutilizável para coletar dados de novos usuários, incluindo validação de campos e envio dos dados para a API.");
-			skillService.salvar(novoSkill);
+			novoItem.setNome("Criar um componente de formulário para cadastro de usuários.");
+			novoItem.setDescricao("Desenvolver um componente reutilizável para coletar dados de novos usuários, incluindo validação de campos e envio dos dados para a API.");
+			itemService.salvar(novoItem);
 
-			novoSkill.setNome("Desenvolver uma API REST para um sistema de e-commerce");
-			novoSkill.setDescricao("Criar uma interface de programação de aplicativos (API) RESTful para permitir que outros sistemas se conectem e interajam ");
-			skillService.salvar(novoSkill);
+			novoItem.setNome("Desenvolver uma API REST para um sistema de e-commerce");
+			novoItem.setDescricao("Criar uma interface de programação de aplicativos (API) RESTful para permitir que outros sistemas se conectem e interajam ");
+			itemService.salvar(novoItem);
+			
+			
 		}
 	}
 

@@ -1,7 +1,5 @@
 package br.com.api.Info4.dtos;
 
-import java.time.LocalDateTime;
-
 public class ItemsRespostaDTO {
 
 	private Integer id;
@@ -9,7 +7,6 @@ public class ItemsRespostaDTO {
 	private String descricao;
 	private String data;
 
-	
 	public ItemsRespostaDTO() {
 		super();
 	}
@@ -38,7 +35,6 @@ public class ItemsRespostaDTO {
 		this.descricao = descricao;
 	}
 
-	
 	public String getData() {
 		return data;
 	}

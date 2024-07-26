@@ -5,7 +5,7 @@
     align-items: center;
     overflow-y: scroll;
     padding-top: 15px;
-    background-color: #e8f1f3;
+    background-color: #d2d5af;
     min-height: 90vh;
 }
 
@@ -15,22 +15,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #BBC1DC;
+    background-color: #a3ab98;
     gap: 20px;
     padding-top: 20px;
     margin-bottom: 20px;
     border-radius: 20px;
 }
 
-@media screen and (max-width : 768px){
-    .postHo{
+@media screen and (max-width : 768px) {
+    .postHo {
         width: 80%;
     }
 }
 
 .nomeHo {
     text-align: center;
-    background-color: #da9e9e;
+    background-color: #60958b;
     border-radius: 10px;
     padding: 5px;
     font-weight: bold;
@@ -39,10 +39,27 @@
 
 .descricaoHo {
     text-align: center;
-    background-color: #ede4e2;
+    background-color: #bcbcbc;
     border-radius: 20px;
     padding: 10px;
     width: 70%;
+}
+
+
+.texto {
+    width: 100%;
+    white-space: pre-wrap;
+    overflow-x: hidden;
+    /* text-overflow: ellipsis; */
+}
+
+.data {
+    width: 100%;
+    margin-bottom: 3px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .btnSobe {
@@ -51,20 +68,4 @@
     right: 10%;
     bottom: 5%;
     border: 0px;
-}
-
-.algo {
-    width: 100%;
-    white-space: pre-wrap;
-    overflow-x: hidden;
-    /* text-overflow: ellipsis; */
-}
-
-.data{
-    width: 100%;
-    margin: 0px;
-    padding-right: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
 }

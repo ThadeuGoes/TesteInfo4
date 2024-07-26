@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
 
@@ -21,25 +22,25 @@ public class ItemsService {
 	@Autowired
 	ItemsRepository itemsRepository;
 
-	public Items parseDeItemRequisicao(ItemsRequisicaoDTO objeto) {
+	public Items parseDeItemRequisicao(ItemsRequisicaoDTO item) {
 		Items itemNovo = new Items();
 
-		itemNovo.setNome(objeto.getNome());
-		itemNovo.setDescricao(objeto.getDescricao());
+		itemNovo.setNome(item.getNome());
+		itemNovo.setDescricao(item.getDescricao());
 		itemNovo.setData(LocalDateTime.now());
 
 		return itemNovo;
 	}
 
-	public ItemsRespostaDTO parseDeItemsResposta(Items objeto) {
+	public ItemsRespostaDTO parseDeItemsResposta(Items item) {
 		ItemsRespostaDTO itemNovo = new ItemsRespostaDTO();
 
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-		itemNovo.setNome(objeto.getNome());
-		itemNovo.setDescricao(objeto.getDescricao());
-		itemNovo.setId(objeto.getId());
-		itemNovo.setData(objeto.getData().format(formatter));
+		itemNovo.setNome(item.getNome());
+		itemNovo.setDescricao(item.getDescricao());
+		itemNovo.setId(item.getId());
+		itemNovo.setData(item.getData().format(formatter));
 
 		return itemNovo;
 	}
@@ -62,15 +63,39 @@ public class ItemsService {
 	}
 
 	public List<ItemsRespostaDTO> listar() {
-		List<ItemsRespostaDTO> skillsResposta = new ArrayList<>();
+		List<ItemsRespostaDTO> itemsResposta = new ArrayList<>();
 		List<Items> items = itemsRepository.findAll();
+		
 		for (Items item : items) {
-			skillsResposta.add(parseDeItemsResposta(item));
+			itemsResposta.add(parseDeItemsResposta(item));
 		}
-		return skillsResposta;
+		return itemsResposta;
 	}
 
 	public void deletar(Integer id) {
 		itemsRepository.deleteById(id);
+	}
+
+	public ItemsRespostaDTO atualizar(Integer id, ItemsRequisicaoDTO itemMuda) {
+
+		if (itemsRepository.findById(id).get() == null) {
+			throw new EntityNotFoundException("item nao existe");
+
+		} else {
+			Optional<Items> itemVelho = itemsRepository.findById(id);
+			Items item = parseDeItemRequisicao(itemMuda);
+
+			if (item.getNome() != null) {
+				itemVelho.get().setNome(item.getNome());
+			}
+			if (item.getDescricao() != null) {
+				itemVelho.get().setDescricao(item.getDescricao());
+			}
+
+			itemVelho.get().setId(id);
+
+			return parseDeItemsResposta(itemsRepository.save(itemVelho.get()));
+
+		}
 	}
 }

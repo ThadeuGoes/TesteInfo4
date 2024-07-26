@@ -4,23 +4,23 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #e8f1f3;
+    background-color: #d2d5af;
 }
 
 .error-message1 {
-    color: red;
+    color: rgb(174, 17, 17);
     position: relative;
     top: 10%;
 }
 
 .error-message2 {
-    color: red;
+    color: rgb(174, 17, 17);
     position: relative;
-    top: 15%;
+    top: 10%;
 }
 
 .containerCA {
-    background-color: #BBC1DC;
+    background-color: #a3ab98;
     width: 70%;
     height: 75%;
     border-radius: 20px;
@@ -44,7 +44,7 @@
 }
 
 .dados {
-    background-color: #9ca2c0;
+    background-color: #60958b;
     width: 80%;
     padding-top: 15px;
     display: flex;

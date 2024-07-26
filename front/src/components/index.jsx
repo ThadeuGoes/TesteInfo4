@@ -8,14 +8,10 @@ import { useLocation } from 'react-router-dom';
 function HeaderWeb() {
 
     let navigate = useNavigate();
+    const location = useLocation();
 
     const [algo, setAlgo] = useState("/cadastro")
-
-    const location = useLocation();
     const currentPath = location.pathname;
-
-    useEffect(() =>{console.log(currentPath)},[])
-
 
     return (
         <>
@@ -23,10 +19,10 @@ function HeaderWeb() {
                 <img width={'70px'} height={'70px'} src={Logo} />
                 {algo ===currentPath ?
                     <>
-                        <button className='btncadastrar' onClick={()=>navigate("/")}>Home</button>
+                        <button className='btnpagina' onClick={()=>navigate("/")}>Home</button>
                     </>
                     : <>
-                        <button className='btncadastrar' onClick={()=>navigate("/cadastro")}>Cadastro</button>
+                        <button className='btnpagina' onClick={()=>navigate("/cadastro")}>Cadastro</button>
                     </>}
             </div >
         </>
